@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="version" content="2.1.0-updated-20240424" />
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io-2/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io-2/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io-2/favicon-16x16.png?v=2">
+    <link rel="icon" type="image/x-icon" href="/favicon_io-2/favicon.ico?v=2">
+    <link rel="manifest" href="/favicon_io-2/site.webmanifest?v=2">
+    <meta name="theme-color" content="#FF5722">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    
+    <title>Aggelos Kwn - Portfolio </title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx?v=2104"></script>
+    
+    <script>
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+            registration.unregister();
+            console.log('Service worker unregistered:', registration);
+          }
+        });
+      }
+
+      if ('caches' in window) {
+        caches.keys().then(function(cacheNames) {
+          cacheNames.forEach(function(cacheName) {
+            caches.delete(cacheName);
+            console.log('Cache cleared:', cacheName);
+          });
+        });
+      }
+
+      localStorage.setItem('lastLoadTime', Date.now().toString());
+
+      const lastVisit = localStorage.getItem('lastVisitTimestamp');
+      const now = Date.now();
+      localStorage.setItem('lastVisitTimestamp', now.toString());
+
+      if (lastVisit && (now - parseInt(lastVisit)) > 60 * 60 * 1000) {
+
+        if (Math.random() < 0.1) {
+          window.location.reload(true);
+        }
+      }
+    </script>
+  </body>
+</html>
